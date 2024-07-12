@@ -1,0 +1,140 @@
+<!-- <div class="container-fluid pt-5 pb-5">
+  <h4 class="carouselHeading col-12 d-flex justify-content-center">Cart</h4>
+
+  <div class="row row-cols-1 lg:row-cols-2 xl:row-cols-3 justify-content-center mx-auto">
+    <ng-container *ngFor="let book of books">
+      <div class="col">
+        <div class="card shadow hover:shadow-lg border text-white">
+          <img [src]="book.image" alt="card-image" class="card-img-top p-2" style="width:150px; height:auto;">
+          <div class="card-body p-6">
+            <h5 class="card-title mb-2 font-sans text-lg antialiased font-semibold leading-snug tracking-normal">
+              {{ book.title }}
+            </h5>
+            <h5 class="card-text mb-2 font-sans text-lg antialiased font-semibold leading-snug tracking-normal">
+              <b>Price: ₹</b> {{ book.price }}
+            </h5>
+          </div>
+          <div class="card-body pb-5 px-6 ml-2">
+            <button class="btn btn-danger px-32 py-2 align-middle font-sans font-bold text-center transition-all hover:scale-110 text-lg rounded-lg" type="button" (click)="removeFromCart(book.title)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <p class="mt-10 text-6xl text-black text-center">Total Price: ₹{{ totalPrice }}</p>
+
+  <button class="btn btn-success disabled:opacity-50 px-32 py-4 mt-10 ml-auto font-bold text-center hover:scale-110 text-lg rounded-lg" [disabled]="totalPrice == 0" (click)="toCheckOut()">
+    Checkout
+  </button>
+</div> -->
+
+<div class="container">
+  <div
+    class="row row-cols-1 row-cols-md-2 g-4"
+    *ngIf="books && books.length > 0"
+  >
+    <div class="col" *ngFor="let book of books">
+      <div class="card mb-3 mt-2" style="max-width: 600px">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img
+              [src]="book.image"
+              class="img-fluid rounded-start card-img-top"
+              alt="Book Image"
+            />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">
+                Book Title: <em class="text-muted">{{ book.title }}</em>
+              </h5>
+              <p class="card-text">
+                <b>Price</b>: <b>₹{{ book.price }}</b>
+              </p>
+            </div>
+
+            <div class="card-body pb-5 px-6 ml-2">
+              <button
+                class="btn cart-button px-32 py-2 align-middle font-sans font-bold text-center transition-all hover:scale-110 text-lg rounded-lg"
+                type="button"
+                (click)="removeFromCart(book.title)"
+              >
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4" *ngIf="books && books.length > 0">
+    <div class="col">
+      <div class="d-flex justify-content-start align-items-center">
+        <h4 class="card-text">
+          <b>Total Price</b>: <em>₹{{ totalPrice }}</em>
+        </h4>
+      </div>
+      <div class="d-flex justify-content-start mt-2">
+        <button
+          class="cart-button mb-2 btn btn-lg"
+          [disabled]="totalPrice == 0"
+          (click)="toCheckOut()"
+        >
+          Check Out
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngIf="books.length === 0"
+    class="d-flex flex-column justify-content-center align-items-center vh-100 mb-5"
+  >
+    <h3 class="mb-3">Your cart is empty.</h3>
+    <p>Please add some books to your cart.</p>
+  </div>
+
+  <nav
+    class="footer navbar navbar-light position-fixed bottom-0 w-100"
+    [ngClass]="{ 'fixed-bottom': books.length === 0 }"
+  >
+    <div class="container">
+      <div class="row">
+        <!-- Footer content -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- <div class="container">
+  <div class="row row-cols-1 row-cols-md-2 g-4" >
+    <div class="col" *ngFor="let book of books">
+   <div class="card mb-3 mt-2 " style="max-width: 600px;">
+     <div class="row g-0">
+       <div class="col-md-4">
+         <img [src]="book.image" class="img-fluid rounded-start card-img-top" alt="Book Image"/>
+       </div>
+       <div class="col-md-8">
+         <div class="card-body">
+           <p class="card-title"><b>Book Title</b>:<em> {{ book.title }}</em></p>
+           <p class="card-text"><b>Price</b>:<em> <b>₹{{ book.price }}</b></em></p>          
+         </div>
+         <div class="card-body">
+           <button class="btn btn-outline-danger" (click)="removeFromCart(book.title)">Remove from Cart</button>
+         </div>
+       </div>
+     </div>
+    </div>
+    
+  </div>
+
+ <p class="card-text"><b>Total Price</b>:<em> ₹{{ totalPrice }}</em></p>
+ <div class="button">
+  <button class="cart-button mb-2" [disabled]="totalPrice == 0" (click)="toCheckOut()" >Check Out</button>  
+ </div>
+ 
+</div> -->
+</div>

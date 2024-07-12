@@ -1,0 +1,92 @@
+/* No changes needed to these base styles from your original orders.component.css */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.text-6xl {
+  font-size: 3.5rem;
+}
+
+.text-white {
+  color: white;
+}
+
+/* Use classes from styles.css for specific elements */
+.carouselHeading {
+  color: #466b69;
+}
+
+.container {
+  max-width: 700px; /* Adjust container width for responsiveness (consider using a class from styles.css) */
+}
+
+.bg-gray-800 {
+  background-color: #343a40; /* No change */
+}
+
+.border {
+  border-width: 1px; /* No change */
+}
+
+.border-teal-300 {
+  border-color: #20c997; /* No change */
+}
+
+.rounded-lg {
+  border-radius: 0.5rem; /* No change */
+}
+
+.shadow-md {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect (consider using a class from styles.css) */
+}
+
+.order-card {
+  padding: 2rem; /* Adjust padding for content spacing (consider using a class from styles.css) */
+}
+
+.text-4xl {
+  font-size: 2.5rem; /* No change */
+}
+
+.order-details {
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* Light border between heading and details */
+  padding-top: 1rem; /* Add space above details */
+}
+
+.detail-row {
+  margin-bottom: 0.5rem; /* Space between detail rows */
+}
+
+.detail-label {
+  width: 120px; /* Fixed width for labels */
+  margin-right: 10px;
+}
+
+.cancel-btn {
+  background-color: #d9534f; /* Consider using a class from styles.css for cancel button color */
+  color: #fff; /* No change */
+  padding: 0.75rem 1.5rem; /* No change */
+  border: none; /* No change */
+  border-radius: 5px; /* No change */
+  cursor: pointer; /* No change */
+  transition: background-color 0.2s ease-in-out; /* No change */
+  margin-top: 1rem; /* Space above cancel button */
+}
+
+.cancel-btn:hover {
+  background-color: #c9302c; /* Consider using a class from styles.css for cancel button hover color */
+}

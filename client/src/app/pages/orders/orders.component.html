@@ -1,0 +1,123 @@
+<ng-container *ngIf="!anyorder; else containorders">
+  <div
+    class="d-flex flex-column justify-content-center align-items-center vh-100 empty-message"
+  >
+    <h3 class="mb-3">No Orders Found</h3>
+    <p class="text-xl">Start shopping and fill your order list!</p>
+  </div>
+  <nav
+    class="footer fixed-bottom navbar navbar-light position-fixed bottom-0 w-100"
+  ></nav>
+</ng-container>
+
+<ng-template #containorders>
+  <div class="min-h-screen p-8">
+    <h1
+      class="carouselHeading col-12 d-flex justify-content-center p-5 text-3xl"
+    >
+      Order Details
+    </h1>
+    <ng-container *ngFor="let order of orders">
+      <div
+        class="container mx-auto px-4 py-8 mb-5 bg-gray-800 border border-teal-300 rounded-lg shadow-md order-card"
+      >
+        <div class="pl-4">
+          <p class="text-4xl pb-2 text-white">
+            Order No. {{ order._id | slice : -10 }}
+          </p>
+        </div>
+        <div class="flex flex-col text-white pl-4 order-details">
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Name:</span> {{ order.name }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Email:</span> {{ order.email }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Phone:</span> {{ order.phone }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Total Price: ₹</span>
+            {{ order.totalprice }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Payment Method:</span>
+            {{ order.paymentmethod }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Status:</span>
+            {{ order.status }}
+          </p>
+          <p class="text-xl detail-row">
+            <span class="font-bold detail-label">Address:</span>
+            {{ order.address }}, City- {{ order.city }}, State-
+            {{ order.state }}, Pin- {{ order.pin }}
+          </p>
+          <button
+            *ngIf="button(order.status)"
+            class="btn btn-danger mt-2 mr-10 align-middle font-sans font-bold text-center text-white hover:shadow-lg hover:bg-red-500 cancel-btn"
+            (click)="cancelOrder(order._id)"
+          >
+            Cancel Order
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template>
+
+<!-- <ng-container *ngIf="!anyorder; else containorders">
+  <div class="min-h-screen text-center p-20">
+    <p class="text-6xl text-gray-100">No Order Placed</p>
+  </div>
+</ng-container>
+<ng-template #containorders>
+  <div class="min-h-screen p-8">
+    <h1 class="carouselHeading col-12 d-flex justify-content-center p-5">
+      Order Details
+    </h1>
+    <ng-container *ngFor="let order of orders">
+      <div
+        class="container mx-auto px-4 py-8 mb-5 bg-gray-900 border border-teal-300 rounded-lg shadow-md"
+      >
+        <div class="pl-4">
+          <p class="text-4xl pb-2 text-black">
+            Order No. {{ order._id | slice : -10 }}
+          </p>
+        </div>
+        <div class="flex flex-col text-black pl-4">
+          <p class="text-2xl">
+            <span class="font-bold">Name:</span> {{ order.name }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Email:</span> {{ order.email }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Phone:</span> {{ order.phone }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Total Price: ₹</span> {{ order.totalprice }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Payment Method:</span>
+            {{ order.paymentmethod }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Status:</span> {{ order.status }}
+          </p>
+          <p class="text-xl">
+            <span class="font-bold">Address:</span> {{ order.address }}, City-
+            {{ order.city }}, State- {{ order.state }}, Pin- {{ order.pin }}
+          </p>
+          <button
+            *ngIf="button(order.status)"
+            class="btn btn-danger mt-2 mr-10 align-middle font-sans font-bold text-center text-white hover:shadow-lg hover:bg-red-500"
+            (click)="cancelOrder(order._id)"
+          >
+            Cancel Order
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-template> -->

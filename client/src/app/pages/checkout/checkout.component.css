@@ -1,0 +1,22 @@
+@media (max-width: 767px) {
+  .my-2.ms-3.ms-md-5.fs-1.mb-2.text-black {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+
+  .px-4.px-sm-0.px-lg-5.pb-5.pt-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .my-2.ms-3.ms-md-5.fs-1.mb-2.text-black {
+    margin-left: 0.5rem !important;
+  }
+
+  .px-4.px-sm-0.px-lg-5.pb-5.pt-4 {
+    padding-left: 1rem !important;
+    padding-right: 2rem !important;
+  }
+}

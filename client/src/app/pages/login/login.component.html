@@ -1,0 +1,35 @@
+<div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center p-5">
+  <div class="col-lg-4 col-md-6 col-sm-8 border shadow-lg p-5">
+    <h3 class="text-center mb-5">Login</h3>
+    <form [formGroup]="loginForm" class="d-flex flex-column">
+      <div class="form-group mb-3">
+        <label for="email">Email</label>
+        <input formControlName="email" class="form-control" id="email" type="text" placeholder="Email"
+          pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required />
+        <div *ngIf="loginForm.hasError('required', 'email') && loginForm.controls['email'].dirty"
+          class="invalid-feedback">
+          *Email is required
+        </div>
+        <div *ngIf="loginForm.controls['email'].errors?.['pattern']" class="invalid-feedback">
+          *Email is Invalid
+        </div>
+      </div>
+      <div class="form-group mb-3">
+        <label for="password">Password</label>
+        <input formControlName="password" class="form-control" id="password" type="password" placeholder="Password"
+          required />
+        <div *ngIf="loginForm.hasError('required', 'password') && loginForm.controls['password'].dirty"
+          class="invalid-feedback">
+          *Password is required
+        </div>
+      </div>
+      <button [disabled]="loginForm.invalid" [class.disabled]="loginForm.invalid" (click)="login()"
+        class="cart-button hover:scale-105 " >
+        Login
+      </button>
+    </form>
+    <div class="mt-5 d-flex justify-content-"> Don't have account?
+      <a routerLink="/register" class="text-indigo-600 cursor-pointer">Create Account</a>
+    </div>
+  </div>
+</div>

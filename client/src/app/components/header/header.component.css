@@ -1,0 +1,31 @@
+.dropdown-toggle::after {
+  display: none; /* Hides the caret after the toggle button */
+}
+.fas.fa-user-circle {
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+.dropdown-menu {
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.dropdown-item {
+  color: black;
+  padding: 5px 10px;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+  .dropdown-menu {
+    width: 120px;
+  }
+}

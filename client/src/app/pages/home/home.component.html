@@ -1,0 +1,8 @@
+<div class="container-fluid ps-5 pe-5">
+  <h1 class="carouselHeading text-center mt-2">Welcome to BookStore</h1>
+  <div class="row">
+    <ng-container *ngFor="let book of books">
+      <app-book-card class="animate menu-card col-md-3 col-sm-6 col-12 my-3" [book]="book"></app-book-card>
+    </ng-container>
+  </div>
+</div>

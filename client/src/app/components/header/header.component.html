@@ -1,0 +1,67 @@
+<nav class="navBar navbar navbar-expand-md navbar-light sticky-top">
+  <div class="navBar container-fluid">
+    <div class="navbar-brand">
+      <span id="logo" routerLink="/"
+        ><img
+          src="./assets/book logo.jfif"
+          alt="BookStore Logo"
+          height="30px"
+        /><b>book</b><b><i>Store</i></b></span>
+        
+      </div>
+    <button
+      class="navBarButton navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav ms-auto">
+        <ng-container *ngIf="!isLoggedIn; else loggedInMenu">
+          <span class="link mx-auto pe-3 ps-3" routerLink="/home">Home</span>
+          <span class="link mx-auto pe-3 ps-3" routerLink="/aboutus">About us</span>
+          <span routerLink="/login" class="link mx-auto pe-3 ps-3">Login</span>
+          <span routerLink="/register" class="link mx-auto pe-3 ps-3"
+            >Register</span
+          >
+        </ng-container>
+        <ng-template #loggedInMenu>
+          <span class="link mx-auto pe-3 ps-3" routerLink="/home">Home</span>
+          <span class="link mx-auto pe-3 ps-3" routerLink="/aboutus">About us</span>
+          <span class="link mx-auto pe-3 ps-3" routerLink="/cart">🛒Cart</span>
+          <span class="link mx-auto pe-3 ps-3" routerLink="/orders"
+            >Orders</span
+          >
+        </ng-template>
+      </div>
+      <div class="navbar-nav ms-auto" *ngIf="isLoggedIn">
+        <div class="dropdown mx-auto" (click)="toggleUserDropdown()">
+          <a
+            class="nav-link dropdown-toggle "
+            href="#"
+            id="userDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="showUserDropdown"
+          >
+            <i class="fas fa-user-circle "></i>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="userDropdown"
+            [class.show]="showUserDropdown"
+          >
+            <li><a class="dropdown-item" href="/account">My Profile</a></li>
+            <li>
+              <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

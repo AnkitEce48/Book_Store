@@ -1,0 +1,10 @@
+.account{
+    min-height: 70vh;
+    display: flex;
+}
+.account-content{
+    /* position: relative; */
+    grid-row: auto;
+    margin-top: 10vh;
+    /* margin-bottom: 7vh; */
+}
